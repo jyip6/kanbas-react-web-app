@@ -13,6 +13,7 @@ export default function Labs() {
     <div>
       <h1>Welcome to Web Dev</h1>
       <h2>Jun Ye</h2>
+      <h2>Section 2024 Full Summer</h2>
       <TOC />
       <Routes>
         <Route path="/" element={<Navigate to="Lab1" />} />
