@@ -12,7 +12,7 @@ export default function Labs() {
   return (
     <div>
       <h1>Welcome to Web Dev</h1>
-      <h2>Jose Annunziato</h2>
+      <h2>Jun Ye</h2>
       <TOC />
       <Routes>
         <Route path="/" element={<Navigate to="Lab1" />} />
