@@ -39,6 +39,8 @@ export default function Assignments() {
               Due May 27 at 11:59pm | 100 pts
         </li>
 
+        
+
       </ul>
     </div>
 );}

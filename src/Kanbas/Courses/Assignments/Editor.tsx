@@ -106,7 +106,7 @@ export default function AssignmentEditor() {
             </td>
 
             <td>
-            <label htmlFor="wd-available-until"> Available from </label>
+            <label htmlFor="wd-available-until"> Until from </label>
             </td>
             <td>
             <input type="date"
@@ -115,7 +115,9 @@ export default function AssignmentEditor() {
             </td>
             </tr>
             
-            
+            <button id="wd-cancel" type="button">cancel</button>
+            <button id="wd-save" type="button">save</button>
+
 
         </table>
       </div>
