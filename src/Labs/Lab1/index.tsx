@@ -286,7 +286,7 @@ tag to tell browsers to render the gaps.
 
       <h4>Anchor tag</h4>
         Please 
-        <a id="wd-github" href="https://github.com/Junye66">click here</a>
+        <a id="wd-github" href="https://github.com/jyip6">click here</a>
         to get dummy text<br/>
 
     </div>
