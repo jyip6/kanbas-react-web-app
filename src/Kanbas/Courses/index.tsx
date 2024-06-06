@@ -4,6 +4,7 @@ import Home from "./Home";
 import Modules from "./Modules";
 import CoursesNavigation from "./Navigation";
 import Assignments from "./Assignments";
+import Grades from "./Grades";
 import AssignmentEditor from "./Assignments/Editor";
 import { FaAlignJustify } from 'react-icons/fa';
 
@@ -24,6 +25,7 @@ export default function Courses() {
             <Route path="Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
             <Route path="Assignments/:aid" element={<AssignmentEditor />} />
+            <Route path="/grades" element={<Grades />} />
           </Routes>
         </div>
       </div>
