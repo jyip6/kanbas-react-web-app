@@ -4,6 +4,7 @@ import { MdCheckCircle } from "react-icons/md";
 import ModulesControls from './AssignmentsControl';
 import AssignmentsControlButtons from './AssignmentsControlButtons';
 import { IoEllipsisVertical } from "react-icons/io5";
+import { RiNewspaperLine } from "react-icons/ri";
 
 export default function Assignments() {
     return (
@@ -14,6 +15,7 @@ export default function Assignments() {
                     <div className="d-flex justify-content-between align-items-center p-3 ps-2 bg-light border-bottom">
                         <div className="d-flex align-items-center">
                             <BsGripVertical className="me-2 fs-3" />
+
                             <h5 className="mb-0">ASSIGNMENTS</h5>
                         </div>
                         <div className="d-flex align-items-center">
@@ -22,36 +24,58 @@ export default function Assignments() {
                             <IoEllipsisVertical className="fs-4 ms-3" />
                         </div>
                     </div>
-                    <ul className="list-group rounded-0 rounded-0 border-5 border-start border-success">
-                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                    <ul className="list-group rounded-0 border-5 border-start border-success">
+                        <li className="list-group-item d-flex align-items-start">
+                            <BsGripVertical className="me-2 fs-3" />
+                            <RiNewspaperLine className="me-2 fs-3"/>
+                            
                             <div>
-                                <BsGripVertical className="me-2" />
-                                <a href="#/Kanbas/Courses/1234/Assignments/123" className="text-decoration-none" style={{ color: 'black'}}>
+                                <a href="#/Kanbas/Courses/1234/Assignments/123" className="text-decoration-none" style={{ color: 'black' }}>
                                     A1
                                 </a>
-                                <small className="text-muted d-block">Multiple Modules | Not available until May 6 at 12:00am | Due May 13 at 11:59pm | 100 pts</small>
+                                
+                                <div className="d-flex flex-column">
+                                <span className="text-muted">
+                                <span style={{color:'red'}}>Multiple Modules</span> | <strong>Not available</strong> until May 13 at 12:00am
+                              </span>
+                                    <span className="text-muted"><strong>Due</strong> May 13 at 11:59pm | 100 pts</span>
+                                    
+                                </div>
                             </div>
-                            <MdCheckCircle className="text-success" />
+                            <AssignmentsControlButtons/>
+          
                         </li>
-                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                        <li className="list-group-item d-flex align-items-start">
+                            <BsGripVertical className="me-2 fs-3" />
+                            <RiNewspaperLine className="me-2 fs-3"/>
                             <div>
-                                <BsGripVertical className="me-2" />
                                 <a href="#/Kanbas/Courses/1234/Assignments/123" className="text-decoration-none" style={{ color: 'black' }}>
                                     A2
                                 </a>
-                                <small className="text-muted d-block">Multiple Modules | Not available until May 13 at 12:00am | Due May 20 at 11:59pm | 100 pts</small>
+                                <div className="d-flex flex-column">
+                                <span className="text-muted">
+                                <span style={{color:'red'}}>Multiple Modules</span> | <strong>Not available</strong> until May 13 at 12:00am
+                              </span>
+                                    <span className="text-muted"><strong>Due</strong> May 20 at 11:59pm | 100 pts</span>
+                                </div>
                             </div>
-                            <MdCheckCircle className="text-success" />
+                            <AssignmentsControlButtons/>
                         </li>
-                        <li className="list-group-item d-flex justify-content-between align-items-center">
+                        <li className="list-group-item d-flex align-items-start">
+                            <BsGripVertical className="me-2 fs-3" />
+                            <RiNewspaperLine className="me-2 fs-3"/>
                             <div>
-                                <BsGripVertical className="me-2" />
                                 <a href="#/Kanbas/Courses/1234/Assignments/123" className="text-decoration-none" style={{ color: 'black' }}>
                                     A3
                                 </a>
-                                <small className="text-muted d-block">Multiple Modules | Not available until May 20 at 12:00am | Due May 27 at 11:59pm | 100 pts</small>
+                                <div className="d-flex flex-column">
+                                <span className="text-muted">
+                                <span style={{color:'red'}}>Multiple Modules</span> | <strong>Not available</strong> until May 13 at 12:00am
+                              </span>
+                                    <span className="text-muted"><strong>Due</strong> May 27 at 11:59pm | 100 pts</span>
+                                </div>
                             </div>
-                            <MdCheckCircle className="text-success" />
+                            <AssignmentsControlButtons/>
                         </li>
                     </ul>
                 </li>
