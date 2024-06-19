@@ -27,8 +27,6 @@ export default function CoursesNavigation() {
                   {link}
                </Link>
 
-
-
          ))}
          </div>
 

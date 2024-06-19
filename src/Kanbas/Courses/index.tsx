@@ -30,7 +30,7 @@ export default function Courses() {
             <Route path="Modules" element={<Modules />} />
             <Route path="Assignments" element={<Assignments />} />
             <Route path="Assignments/:aid" element={<AssignmentEditor />} />
-            <Route path="Assignments/:aid/Grades" element={<Grades />} />
+            <Route path="Grades" element={<Grades />} />
           </Routes>
         </div>
       </div>
