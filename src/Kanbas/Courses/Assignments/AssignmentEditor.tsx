@@ -34,10 +34,18 @@ export default function AssignmentEditor() {
 
     const handleSave = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const formatDate = (dateString: string) => {
+            const date = new Date(dateString);
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            return `${monthNames[date.getMonth()]} ${date.getDate()} at ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}${date.getHours() >= 12 ? 'pm' : 'am'}`;
+        };
+
         const newAssignment = {
             ...assignment,
             course: cid,
-            _id: isNewAssignment ? new Date().getTime().toString() : aid
+            _id: isNewAssignment ? new Date().getTime().toString() : aid,
+            due: formatDate(assignment.due_date),
+            available: formatDate(assignment.available_from_date),
         };
         
         if (isNewAssignment) {
@@ -202,7 +210,7 @@ export default function AssignmentEditor() {
                                             id="wd-due-date"
                                             name="due_date"
                                             className="form-control"
-                                            type="date"
+                                            type="datetime-local"
                                             value={assignment.due_date}
                                             onChange={handleChange}
                                         />
@@ -219,7 +227,7 @@ export default function AssignmentEditor() {
                                                 id="wd-available-from"
                                                 name="available_from_date"
                                                 className="form-control"
-                                                type="date"
+                                                type="datetime-local"
                                                 value={assignment.available_from_date}
                                                 onChange={handleChange}
                                             />
@@ -232,7 +240,7 @@ export default function AssignmentEditor() {
                                                 id="wd-available-until"
                                                 name="available_until_date"
                                                 className="form-control"
-                                                type="date"
+                                                type="datetime-local"
                                                 value={assignment.available_until_date}
                                                 onChange={handleChange}
                                             />

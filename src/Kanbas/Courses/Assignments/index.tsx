@@ -50,38 +50,38 @@ export default function Assignments() {
                         <AssignmentControlButtons/>
                     </div>
                     <ul className="wd-assignment-list list-group rounded-0" style={{borderLeft: '5px solid green'}}>
-                        {assignments.map((assignment: any) => (
-                            <li key={assignment._id} className="wd-assignment-list-item list-group-item p-3 ps-1">
-                                <div className="d-flex align-items-center flex-grow-1">
-                                    <BsGripVertical className="me-2 fs-3"/>
-                                    <TfiPencilAlt className="me-4 fs-5 text-success"/>
-                                    <span className="d-inline-block">
-                                      <a className="wd-assignment-list-item fw-bold"
-                                         href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
-                                         style={{color: 'black'}}>
-                                            {assignment.title}
-                                      </a>
-                                            <div className="ms-0">
-                                                  <div className="d-flex align-items-center">
-                                                        <div className="text-danger">Multiple Modules</div>
-                                                        <div className="ms-2">|</div>
-                                                        <div className="fw-bold ms-2"> Not available until</div>
-                                                        <div className="ms-2">{assignment.available}</div>
-                                                  </div>
-                                                  <div className="d-flex align-items-center">
-                                                        <div className="fw-bold">Due</div>
-                                                        <div className="ms-2">{assignment.due}</div>
-                                                        <div className={"ms-2"}> | </div>
-                                                        <div className="ms-2"> {assignment.points} pts </div>
-                                                  </div>
-                                             </div>
-                                    </span>
-                                    <div className="ms-auto">
-                                        <ControlButtons onDeleteClick={() => handleDeleteClick(assignment._id)} />
+                    {assignments.map((assignment: any) => (
+                        <li key={assignment._id} className="wd-assignment-list-item list-group-item p-3 ps-1">
+                            <div className="d-flex align-items-center flex-grow-1">
+                                <BsGripVertical className="me-2 fs-3"/>
+                                <TfiPencilAlt className="me-4 fs-5 text-success"/>
+                                <span className="d-inline-block">
+                                    <a className="wd-assignment-list-item fw-bold"
+                                    href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
+                                    style={{color: 'black'}}>
+                                        {assignment.title}
+                                    </a>
+                                    <div className="ms-0">
+                                        <div className="d-flex align-items-center">
+                                            <div className="text-danger">Multiple Modules</div>
+                                            <div className="ms-2">|</div>
+                                            <div className="fw-bold ms-2"> Not available until</div>
+                                            <div className="ms-2">{assignment.available}</div>
+                                        </div>
+                                        <div className="d-flex align-items-center">
+                                            <div className="fw-bold">Due</div>
+                                            <div className="ms-2">{assignment.due}</div>
+                                            <div className={"ms-2"}> | </div>
+                                            <div className="ms-2"> {assignment.points} pts </div>
+                                        </div>
                                     </div>
+                                </span>
+                                <div className="ms-auto">
+                                    <ControlButtons onDeleteClick={() => handleDeleteClick(assignment._id)} />
                                 </div>
-                            </li>
-                        ))}
+                            </div>
+                        </li>
+                    ))}
                     </ul>
                 </li>
             </ul>
