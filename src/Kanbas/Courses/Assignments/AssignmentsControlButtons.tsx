@@ -22,7 +22,7 @@ export default function AssignmentControlButtons({ assignmentId, onEditClick, on
 
   return (
     <div className="float-end">
-      <span className="border border-dark me-2 px-1 py-2 rounded-pill">
+      <span className="rounded-pill border border-dark me-3 px-1 py-2">
         40% of Total
       </span>
       <FaPencilAlt className="text-primary me-3" onClick={handleEditClick} />

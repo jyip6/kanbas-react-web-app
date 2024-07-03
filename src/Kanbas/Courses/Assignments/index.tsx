@@ -44,8 +44,8 @@ export default function Assignments() {
             <ul id="wd-assignment-title" className="list-group rounded-0">
                 <li className="wd-title list-group-item p-0 mb-5 fs-5 border-gray">
                     <div className="wd-title p-3 ps-2 bg-secondary">
-                        <BsGripVertical className="me-2 fs-3"/>
-                        <GoTriangleDown className="me-1 fs-4"/>
+                        <BsGripVertical className="me-1 fs-3"/>
+                        <GoTriangleDown className="me-1 fs-3"/>
                         ASSIGNMENTS
                         <AssignmentControlButtons/>
                     </div>
@@ -53,7 +53,7 @@ export default function Assignments() {
                     {assignments.map((assignment: any) => (
                         <li key={assignment._id} className="wd-assignment-list-item list-group-item p-3 ps-1">
                             <div className="d-flex align-items-center flex-grow-1">
-                                <BsGripVertical className="me-2 fs-3"/>
+                                <BsGripVertical className="me-1 fs-3"/>
                                 <TfiPencilAlt className="me-4 fs-5 text-success"/>
                                 <span className="d-inline-block">
                                     <a className="wd-assignment-list-item fw-bold"

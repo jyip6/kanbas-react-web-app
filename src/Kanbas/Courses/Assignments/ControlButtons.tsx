@@ -12,10 +12,10 @@ export default function ControlButtons({onDeleteClick}: ControlButtonsProps) {
             <span className="me-3 position-relative">
                 <FaCheckCircle style={{top: "1px"}}
                                className="text-success me-1 position-absolute fs-3"/>
-                <FaCircle className="text-white me-1 fs-6"/>
+                <FaCircle className="text-white me-2 fs-6"/>
             </span>
             <FaTrash
-                className="text-danger me-3 fs-5"
+                className="text-danger me-1 fs-5"
                 style={{cursor: 'pointer'}}
                 onClick={onDeleteClick}
             />
