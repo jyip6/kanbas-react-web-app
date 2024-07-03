@@ -1,17 +1,34 @@
 import { IoEllipsisVertical } from "react-icons/io5";
-import { FaPlus } from "react-icons/fa6";
+import { FaPlus, FaTrash, FaPencilAlt } from "react-icons/fa";
 
-export default function AssignmentControlButtons() {
-    return (
-        <div className="float-end">
-            <span className="rounded-pill
-                             border border-1
-                             border-dark
-                             me-2 px-2 py-1">
-                            40% of Total
-                        </span>
-            <FaPlus className="me-1 fs-4" />
-            <IoEllipsisVertical className="me-1 fs-4"/>
-        </div>
-    )
+interface AssignmentControlButtonsProps {
+  assignmentId?: string;
+  onEditClick?: (id: string) => void;
+  onDeleteClick?: (id: string) => void;
+}
+
+export default function AssignmentControlButtons({ assignmentId, onEditClick, onDeleteClick }: AssignmentControlButtonsProps) {
+  const handleEditClick = () => {
+    if (onEditClick && assignmentId) {
+      onEditClick(assignmentId);
+    }
+  };
+
+  const handleDeleteClick = () => {
+    if (onDeleteClick && assignmentId) {
+      onDeleteClick(assignmentId);
+    }
+  };
+
+  return (
+    <div className="float-end">
+      <span className="border border-dark me-2 px-1 py-2 rounded-pill">
+        40% of Total
+      </span>
+      <FaPencilAlt className="text-primary me-3" onClick={handleEditClick} />
+      <FaTrash className="text-danger me-3" onClick={handleDeleteClick} />
+      <FaPlus className="me-1 fs-4" />
+      <IoEllipsisVertical className="me-1 fs-4" />
+    </div>
+  );
 }
