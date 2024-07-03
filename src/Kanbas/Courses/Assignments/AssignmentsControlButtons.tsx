@@ -1,11 +1,17 @@
-import React from 'react';
 import { IoEllipsisVertical } from "react-icons/io5";
-import GreenCheckmark from "./GreenCheckmark";
-import { BsPlus } from 'react-icons/bs';
-export default function AssignmentsControlButtons() {
-  return (
-    <div className="ms-auto mt-1 float-end">
-      <GreenCheckmark />
-      <IoEllipsisVertical className="fs-4" />
-    </div>
-);}
+import { FaPlus } from "react-icons/fa6";
+
+export default function AssignmentControlButtons() {
+    return (
+        <div className="float-end">
+            <span className="rounded-pill
+                             border border-1
+                             border-dark
+                             me-2 px-2 py-1">
+                            40% of Total
+                        </span>
+            <FaPlus className="me-1 fs-4" />
+            <IoEllipsisVertical className="me-1 fs-4"/>
+        </div>
+    )
+}
