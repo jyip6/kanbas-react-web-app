@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router";
 import AssignmentsControl from "./AssignmentsControl";
 import AssignmentControlButtons from "./AssignmentsControlButtons";
@@ -8,6 +8,7 @@ import { GoTriangleDown } from "react-icons/go";
 import { TfiPencilAlt } from "react-icons/tfi";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteAssignment } from "./reducer";
+import { findAssignmentsForCourse, deleteAssignment as deleteAssignmentAPI } from './client';
 
 export default function Assignments() {
     const { cid } = useParams();
@@ -19,13 +20,26 @@ export default function Assignments() {
     const [showConfirmDialog, setShowConfirmDialog] = useState(false);
     const [assignmentToDelete, setAssignmentToDelete] = useState<string | null>(null);
 
+    useEffect(() => {
+        const fetchAssignments = async () => {
+            if (!cid) {
+                console.error("Course ID is undefined");
+                return;
+            }
+            const data = await findAssignmentsForCourse(cid);
+            dispatch({ type: 'SET_ASSIGNMENTS', payload: data });
+        };
+        fetchAssignments();
+    }, [cid, dispatch]);
+
     const handleDeleteClick = (assignmentId: string) => {
         setAssignmentToDelete(assignmentId);
         setShowConfirmDialog(true);
     };
 
-    const handleConfirmDelete = () => {
+    const handleConfirmDelete = async () => {
         if (assignmentToDelete) {
+            await deleteAssignmentAPI(assignmentToDelete);
             dispatch(deleteAssignment(assignmentToDelete));
         }
         setShowConfirmDialog(false);

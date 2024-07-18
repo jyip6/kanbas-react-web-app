@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { addAssignment, updateAssignment } from './reducer';
+import * as client from './client';
 
 export default function AssignmentEditor() {
     const { cid, aid } = useParams();
@@ -32,7 +33,7 @@ export default function AssignmentEditor() {
         setAssignment(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSave = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formatDate = (dateString: string) => {
             const date = new Date(dateString);
@@ -42,15 +43,17 @@ export default function AssignmentEditor() {
 
         const newAssignment = {
             ...assignment,
-            course: cid,
-            _id: isNewAssignment ? new Date().getTime().toString() : aid,
+            course: cid!,
+            _id: isNewAssignment ? new Date().getTime().toString() : aid!,
             due: formatDate(assignment.due_date),
             available: formatDate(assignment.available_from_date),
         };
-        
+
         if (isNewAssignment) {
+            await client.createAssignment(cid!, newAssignment);
             dispatch(addAssignment(newAssignment));
         } else {
+            await client.updateAssignment(newAssignment);
             dispatch(updateAssignment(newAssignment));
         }
         navigate(`/Kanbas/Courses/${cid}/Assignments`);

@@ -1,14 +1,9 @@
-import { FaPlus } from "react-icons/fa6";
-import { HiMagnifyingGlass } from "react-icons/hi2";
-import { useNavigate, useParams } from "react-router-dom";
+import {FaPlus} from "react-icons/fa6";
+import {HiMagnifyingGlass} from "react-icons/hi2";
+import {useParams} from "react-router";
 
 export default function AssignmentControls() {
-    const navigate = useNavigate();
-    const { cid } = useParams();
-
-    const handleAddAssignment = () => {
-        navigate(`/Kanbas/Courses/${cid}/Assignments/new`);
-    };
+    const {cid} = useParams();
 
     return (
         <div id="wd-assignment-controls" className="d-flex justify-content-between">
@@ -30,14 +25,13 @@ export default function AssignmentControls() {
                     </button>
                 </div>
                 <div>
-                    <button id="wd-add-assignment"
-                            className="btn btn-lg btn-danger me-1"
-                            onClick={handleAddAssignment}>
+                    <a id="wd-add-assignment"
+                       className="btn btn-lg btn-danger me-1" href={`#/Kanbas/Courses/${cid}/Assignments/new`}>
                         <FaPlus className="position-relative me-1" style={{bottom: "1px"}}/>
                         Assignment
-                    </button>
+                    </a>
                 </div>
             </div>
-        </div>
-    );
+
+        </div>);
 }
